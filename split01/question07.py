@@ -13,6 +13,3 @@ def Cipher_Zeroes(N):
         return str(bin(counter + 1))[2:]
     else:
         return str(bin(counter - 1))[2:]
-
-
-print(Cipher_Zeroes('4'))

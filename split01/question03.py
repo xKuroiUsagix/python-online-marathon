@@ -1,20 +1,16 @@
-from math import ceil
+def isPalindromeNew(word: str) -> bool:
+    letters = set(word)
+    is_only_one = False
 
-
-def isPalindrome(word: str):
-    if word.startswith(word[::-1]):
-        return True
-
-    middle = ceil(len(word) / 2)
-    if word[:middle].endswith(word[middle:]):
-        return True
-
-    if len(word) % 2:
-        return word[middle:] == word[:middle-1]
+    if len(word) % 2 == 0:
+        for i in letters:
+            if word.count(i) % 2 != 0:
+                return False
     else:
-        return word[middle:] == word[:middle]
+        for i in letters:
+            if word.count(i) % 2 != 0 and not is_only_one:
+                is_only_one = True
+            elif word.count(i) % 2 != 0 and is_only_one:
+                return False
 
-    
-
-
-print(isPalindrome('qqqrrrwww'))
+    return True

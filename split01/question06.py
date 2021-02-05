@@ -14,6 +14,3 @@ def order(a: list) -> str:
         return 'descending'
     else:
         return 'not sorted'
-
-
-print(order([1, 7, 0, 4, 8, 1]))
