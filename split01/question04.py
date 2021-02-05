@@ -1,8 +1,6 @@
 # not solved yet
 def findPermutation(n: int, p: list, q: list) -> list:
-    r = []
-    for i in range(1, n+1):
-        q[i] = p[r[i]]
+    return [p.index(q[x]) + 1 for x in range(n)]
 
 
-findPermutation(3, [], [])
+print(findPermutation(5, [3, 4, 1, 2, 5], [4, 5, 2, 3, 1]))
