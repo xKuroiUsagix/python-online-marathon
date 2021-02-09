@@ -2,7 +2,6 @@ from math import fabs
 
 
 def morse_number(number: str) -> str:
-    get_code = lambda num, code: num * code 
     morse_code = ''
     for i in number:
         temp = ''
@@ -14,6 +13,3 @@ def morse_number(number: str) -> str:
         morse_code += temp + ' '
 
     return morse_code
-
-
-print(morse_number('295'))
