@@ -1,18 +1,19 @@
-def day_of_week(day: int):
-    try:
-        int(day)
-        days = {
-            1: 'Monday',
-            2: 'Tuesday',
-            3: 'Wednesday',
-            4: 'Thursday',
-            5: 'Friday',
-            6: 'Saturday',
-            7: 'Sunday'
-        }
+class ToSmallNumberGroupError(Exception): 
+    def __init__(self) -> None:
+        self.data = "We obtain error:Number of your group can't be less than 10"
 
-        return days[day]
-    except KeyError:
-        return 'There is no such day of the week! Please try again.'
+
+    def __str__(self) -> str:
+        return self.data
+
+
+def check_number_group(number: int) -> str:
+    try:
+        if int(number) > 10:
+            return f"Number of your group {int(number)} is valid"
+        else:
+            raise ToSmallNumberGroupError
+    except ToSmallNumberGroupError as msg:
+        return msg
     except ValueError:
-        return 'You did not enter a number! Please try again.'
+        return "You entered incorrect data. Please try again."

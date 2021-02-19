@@ -1,10 +1,7 @@
-import re
-
-
-def valid_email(email: str):
+def divide(numerator, denominator):
     try:
-        if re.match(r'[a-zA-z]+@{1}[^_@]+(\.[a-z]+)+', email) == None:
-            raise ValueError
-        return 'Email is valid'
-    except ValueError:
-        return 'Email is not valid'
+        return f'Result is {numerator / denominator}'
+    except ZeroDivisionError:
+        return f'Oops, {numerator}/{denominator}, division by zero is error!!!'
+    except TypeError:
+        return 'Value Error! You did not enter a number!'

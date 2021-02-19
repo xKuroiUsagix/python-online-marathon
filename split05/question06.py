@@ -1,13 +1,17 @@
-import cmath
-
-
-def solve_quadric_equation(a, b, c):
+def day_of_week(day: int):
     try:
-        D = cmath.sqrt(float(b)**2 - 4*float(a)*float(c))
-        x1 = (-float(b) - D) / (2 * float(a))
-        x2 = (-float(b) + D) / (2 * float(a))
-        return f'The solution are x1={x1} and x2={x2}'
+        days = {
+            1: 'Monday',
+            2: 'Tuesday',
+            3: 'Wednesday',
+            4: 'Thursday',
+            5: 'Friday',
+            6: 'Saturday',
+            7: 'Sunday'
+        }
+
+        return days[int(day)]
+    except KeyError:
+        return 'There is no such day of the week! Please try again.'
     except ValueError:
-        return 'Could not convert string to float'
-    except ZeroDivisionError:
-        return 'Zero Division Error'
+        return 'You did not enter a number! Please try again.'

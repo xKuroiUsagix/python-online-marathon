@@ -1,7 +1,5 @@
-def divide(numerator, denominator):
+def check_odd_even(number: int) -> None:
     try:
-        return f'Result is {numerator / denominator}'
-    except ZeroDivisionError:
-        return f'Oops, {numerator}/{denominator}, division by zero is error!!!'
+        return f"Entered number is {'even' if not number % 2 else 'odd'}"
     except TypeError:
-        return 'Value Error! You did not enter a number!'
+        return 'You entered not a number.'

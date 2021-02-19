@@ -1,5 +1,19 @@
-def check_odd_even(number: int) -> None:
+class MyError(Exception):
+    def __init__(self, data) -> None:
+        self.data = data
+
+
+    def __str__(self) -> str:
+        return f'You input negative number: {self.data}. Try again.'
+    
+
+def check_positive(number) -> str: 
     try:
-        return f"Entered number is {'even' if not number % 2 else 'odd'}"
-    except TypeError:
-        return 'You entered not a number.'
+        if float(number) > 0:
+            return f'You input positive number: {float(number)}'
+        elif float(number) < 0:
+            raise MyError(float(number))
+    except MyError as message:
+        return message
+    except ValueError:
+        return 'Error type: ValueError!'
