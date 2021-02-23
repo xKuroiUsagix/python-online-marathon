@@ -60,8 +60,6 @@ class Group:
             read = json.load(students)
             read = [read] if not isinstance(read, list) else read
             for dictionary in read:
-                students_list.append(Student(dictionary['full_name'],
-                                             dictionary['avg_rank'],
-                                             dictionary['courses']))
+                students_list.append(Student(**dictionary))
 
         return cls(students_file[:students_file.index('.')], students_list)
