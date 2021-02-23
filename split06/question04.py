@@ -27,7 +27,7 @@ class Student:
         return cls(**read)
 
 
-class Group(JSONEncoder):
+class Group:
     def __init__(self, title: str, students: list):
         self.title = title
         self.students = [students] if not isinstance(students, list) else students
