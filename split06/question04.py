@@ -6,7 +6,7 @@ class StudentEncoder(JSONEncoder):
     def default(self, obj):
         if isinstance(obj, Student):
             return obj.__dict__
-        return json.JSONEncoder.default(self, obj)
+        return JSONEncoder.default(self, obj)
 
 
 class Student:
@@ -18,6 +18,7 @@ class Student:
 
     def __str__(self):
         return f'{self.full_name} ({self.avg_rank}): {self.courses}'
+
 
     @classmethod
     def from_json(cls, json_file):
@@ -64,11 +65,3 @@ class Group(JSONEncoder):
                                              dictionary['courses']))
 
         return cls(students_file[:students_file.index('.')], students_list)
-
-
- 	
- 	
-
-g1 = Group.create_group_from_file("2020_2.json")
-g2 = Group.create_group_from_file("2020-01.json")
-Group.serialize_to_json([g1, g2],"g1")
