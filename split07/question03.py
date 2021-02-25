@@ -58,21 +58,3 @@ class Adapter:
     def original_dict(self): 
         """Print original object dict"""
         print(self.adapted_methods)
-
-
-class Target:
-    def request():
-        pass
-
-
- 	
-
-objects = []
-motorCycle = MotorCycle()
-objects.append(Adapter(motorCycle, wheels = motorCycle.TwoWheeler))
-truck = Truck()
-objects.append(Adapter(truck, wheels = truck.EightWheeler))
-car = Car()
-objects.append(Adapter(car, wheels = car.FourWheeler))
-for obj in objects:
-    print(f"A {obj.name} is a {obj.wheels()} vehicle")
