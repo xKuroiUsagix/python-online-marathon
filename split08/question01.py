@@ -4,7 +4,7 @@ import unittest
 class Product:
     def __init__(self, name, price, count):
         if price < 0 or count < 0:
-            raise AttributeError
+            raise ValueError
 
         self.name = name
         self.price = price
