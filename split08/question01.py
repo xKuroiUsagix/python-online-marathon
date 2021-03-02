@@ -36,7 +36,12 @@ class Cart:
 class CartTest(unittest.TestCase):
     def test_total_price_1(self):
         product1 = Product('1', 100, 5)
-        product2 = Product('2', 100, 20)
+        product2 = Product('2', 100, 8)
         product3 = Product('3', 100, 10)
-        cart = Cart([product1, product2, product3])
-        self.assertEqual(cart.get_total_price(), 2675)
+        product4 = Product('4', 100, 20)
+        product5 = Product('5', 100, 30)
+        product6 = Product('6', 100, 2)
+        cart = Cart([product1, product2, product3,
+                     product4, product5, product6
+                     ])
+        self.assertEqual(cart.get_total_price(), 5095)
