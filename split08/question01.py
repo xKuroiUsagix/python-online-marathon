@@ -39,7 +39,4 @@ class CartTest(unittest.TestCase):
         product2 = Product('2', 100, 20)
         product3 = Product('3', 100, 10)
         cart = Cart([product1, product2, product3])
-        self.assertEqual(cart.get_total_price(),
-                        product1.discount_price() * product1.count +\
-                        product2.discount_price() * product2.count +\
-                        product3.discount_price() * product3.count)
+        self.assertEqual(cart.get_total_price(), 2675)
