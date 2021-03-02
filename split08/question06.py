@@ -26,8 +26,7 @@ class ParserTest(unittest.TestCase):
 
     def test_count_substrings(self):
         expected = 'Found 2 strings'
-        with patch('builtins.open',
-                   mock_open(read_data=self.text)) as mock_file:
+        with patch('builtins.open', mock_open(read_data=self.text)) as mock_file:
             open('path/to/open').read() == 'file.txt'
             mock_file.assert_called_with('path/to/open')
             self.assertEqual(file_parser(mock_file, self.to_find), expected)
@@ -35,8 +34,7 @@ class ParserTest(unittest.TestCase):
     def test_replace_substrings(self):
         expected = 'Replaced 2 strings'
         to_replace = 'abc'
-        with patch('builtins.open',
-                   mock_open(read_data=self.text)) as mock_file:
+        with patch('builtins.open', mock_open(read_data=self.text)) as mock_file:
             open('path/to/open').read() == 'file.txt'
             mock_file.assert_called_with('path/to/open')
             self.assertEqual(file_parser(mock_file,
