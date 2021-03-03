@@ -114,7 +114,7 @@ class User:
             - At least 1 number
             - At lest 1 special character
 
-        If passwird invalid raises PasswordValidationException
+        If password invalid raises PasswordValidationException
         Else returns password
         """
         validation_pattern = re.compile(
@@ -132,7 +132,7 @@ class User:
 def add_user(user, users):
     """
     Adds User to users list if User not in list already.
-    Else raises NinUniqueException.
+    Else raises NonUniqueException.
     """
     if check_if_user_present(user.username, user.password, users):
         raise NonUniqueException(user.username)
@@ -142,7 +142,7 @@ def add_user(user, users):
 def add_subject(subject, subjects):
     """
     Adds Subject to subjects list if Subject not in list already.
-    Else raises NinUniqueException.
+    Else raises NonUniqueException.
     """
     for subject_ in subjects:
         if subject_.title == subject.title:
