@@ -10,11 +10,14 @@ const howMuchSec = (...params) => {
         else if (i === 3) {
             seconds += params[i] * 60 * 60 * 24;
         }
+        else if (i == 4) {
+            seconds += params[i] * 60 * 60 * 24 * 7;
+        }
         else if (i === 4) {
-            seconds += params[i] * 60 * 60 * 24 * 30;
+            seconds += params[i] * 60 * 60 * 24 * 7 * 30;
         }
         else if (i == 5) {
-            seconds += params[i] * 60 * 60 * 24 * 30 * 12;
+            seconds += params[i] * 60 * 60 * 24 * 7 * 30 * 12;
         }
     }
     return seconds;
