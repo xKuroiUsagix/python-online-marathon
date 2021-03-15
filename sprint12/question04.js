@@ -24,12 +24,7 @@ class Student {
     }
 
     set direction(direction) {
-        if (direction instanceof String) {
-            this._direction = direction;
-        }
-        else {
-            throw Error("Wrong direction type.");
-        }
+        this._direction = direction;
     }
 }
 
