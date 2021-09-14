@@ -14,3 +14,13 @@ def order(a: list) -> str:
         return 'descending'
     else:
         return 'not sorted'
+    
+    
+def order_other(a: list) -> str:
+    sorted_a = sorted(a)
+
+    if sorted_a == a:
+        return "ascending"
+    elif sorted_a[::-1] == a:
+        return "descending"
+    return "not sorted"
